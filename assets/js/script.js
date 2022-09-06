@@ -30,6 +30,12 @@ function menuMobile() {
   let menuItems = document.querySelectorAll("nav ul li");
   let ul = document.querySelector("nav ul");
 
+  document.documentElement.onclick = function (event) {
+    if (event.target !== menu) {
+      ul.classList.remove("active");
+    }
+  };
+
   menu.addEventListener("click", function () {
     ul.classList.toggle("active");
   });
