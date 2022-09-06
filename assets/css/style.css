@@ -314,16 +314,21 @@ footer p {
   }
 
   article {
-    position: initial;
+    position: relative;
     flex-direction: column;
+    margin-bottom: 10rem;
   }
 
   article img {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.3;
+    filter: blur(0);
   }
 
   article .content {
-    position: initial;
+    position: absolute;
+    padding: 1.5rem;
+    bottom: -8rem;
   }
 
   article .content .info {
