@@ -146,7 +146,12 @@ nav {
   background: var(--color-secondary);
 }
 
+nav button {
+  display: none;
+}
+
 nav ul {
+  display: flex;
   list-style: none;
   flex-wrap: wrap;
 }
@@ -250,13 +255,57 @@ footer p {
     width: 100%;
   }
 
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    padding: 0;
+    position: relative;
+    text-align: center;
+  }
+
+  nav button {
+    display: block;
+    border: 0;
+    background: var(--color-secondary);
+    color: var(--fc-primary);
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.3rem 2.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--ff-primary);
+  }
+
+  nav button:hover {
+    transition: all 500ms;
+    background: var(--color-feature);
+    color: var(--color-primary);
+  }
+
+  nav ul {
+    top: 6rem;
+    left: 0;
+    position: absolute;
+    z-index: 99;
+    background: var(--color-secondary);
+    border-radius: 10px;
+    padding: 1rem;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex !important;
+  }
+
   nav ul.gap-3 {
     gap: 1rem;
   }
 
   nav ul > li {
-    width: calc(50% - 3rem);
-    flex-basis: calc(50% - 3rem);
+    width: 100%;
+    flex-basis: 100%;
   }
 
   nav ul li a {
