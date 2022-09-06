@@ -1,0 +1,283 @@
+:root {
+  font-size: 62.5%;
+
+  --color-primary: #1e272e;
+  --color-secondary: #485460;
+  --color-feature: #ffde59;
+  --fc-primary: #f3f3f3;
+
+  --ff-primary: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 760px;
+  padding: 2rem;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  background-color: var(--color-primary);
+  color: var(--fc-primary);
+  font-family: var(--ff-primary);
+}
+
+a {
+  color: var(--fc-primary);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header {
+  margin-top: 10rem;
+}
+
+header img {
+  border-radius: 50%;
+  width: 21.5rem;
+  border: 1rem solid var(--color-secondary);
+}
+
+.social a {
+  width: 3rem;
+  height: 3rem;
+}
+
+.social a svg {
+  height: auto;
+}
+
+:is(#github, #linkedin, #instagram, #email) svg {
+  fill: #ffde59;
+}
+
+:is(#github, #linkedin, #email) svg path,
+:is(#linkedin, #instagram) svg rect,
+:is(#instagram, #email) svg circle,
+#linkedin svg line {
+  stroke: #ffde59;
+}
+
+#github:hover svg {
+  fill: #f0f6fc;
+}
+
+#github:hover svg path {
+  stroke: #f0f6fc;
+}
+
+#linkedin:hover svg {
+  fill: #0073b1;
+}
+#linkedin:hover svg path,
+#linkedin:hover svg rect,
+#linkedin:hover svg line {
+  stroke: #0073b1;
+}
+
+#instagram:hover svg {
+  fill: #d6249f;
+}
+
+#instagram:hover svg rect,
+#instagram:hover svg circle {
+  stroke: #d6249f;
+}
+
+#email:hover svg {
+  fill: #db4a39;
+}
+
+#email:hover svg path,
+#email:hover svg circle {
+  stroke: #db4a39;
+}
+
+main {
+  margin: 5rem 0;
+}
+
+nav {
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background: var(--color-secondary);
+}
+
+nav ul {
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  padding: 1.3rem 2.3rem;
+  border-radius: 10px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  transition: all 500ms;
+  background: var(--color-feature);
+  color: var(--color-primary);
+}
+
+article {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+article:nth-child(2n) {
+  justify-content: flex-end;
+}
+
+article img {
+  max-width: 45.5rem;
+  height: 35.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.75;
+  filter: blur(2px);
+}
+
+article:hover > img {
+  filter: blur(0);
+  transition: all 500ms;
+}
+
+article .content {
+  text-align: right;
+  position: absolute;
+  right: 0;
+}
+
+article .content > span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+article:nth-child(2n) .content {
+  text-align: left;
+  left: 0;
+}
+
+article:nth-child(2n) .content .codes {
+  flex-direction: row-reverse;
+}
+
+article .content h3 {
+  font-size: 2.5rem;
+}
+
+article .content .codes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+article .content .codes svg {
+  max-width: 1.8rem;
+  height: auto;
+}
+
+article .content .info {
+  background-color: var(--color-secondary);
+  padding: 3rem;
+  border-radius: 10px;
+  width: 45.5rem;
+  min-height: 12rem;
+  margin: 2rem 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  padding: 5rem;
+}
+
+footer p {
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  body {
+    width: 100%;
+  }
+
+  nav ul.gap-3 {
+    gap: 1rem;
+  }
+
+  nav ul > li {
+    width: calc(50% - 3rem);
+    flex-basis: calc(50% - 3rem);
+  }
+
+  nav ul li a {
+    text-align: center;
+    display: block;
+  }
+
+  article {
+    position: initial;
+    flex-direction: column;
+  }
+
+  article img {
+    margin-bottom: 1.5rem;
+  }
+
+  article .content {
+    position: initial;
+  }
+
+  article .content .info {
+    width: 100%;
+  }
+}
