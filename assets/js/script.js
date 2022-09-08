@@ -97,6 +97,7 @@ function getContent() {
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       portfolio.forEach((data) => {
+        console.log(data);
         let matches = data.body.match(regex);
         let content = data.body.replace(regex, "").trim();
         let datas = [];
@@ -121,8 +122,13 @@ function getContent() {
                     ${content}
                   </p>
                   <p class="codes">
-                    <span>${language.join(" | ")}</span>
                     <span>
+                      ${language
+                        .join(" | ")
+                        .replace("Hack |", "")
+                        .replace("Shell |", "")}
+                    </span>
+                    <span class="${datas["link"] ? "" : "none"}">
                       <a
                         target="_blank"
                         href="${datas["link"]}"
@@ -270,6 +276,7 @@ function getContent() {
       page.classList.remove("none");
     })
     .catch((err) => {
+      console.log(err);
       loading.classList.remove("flex");
       loading.classList.add("none");
 
