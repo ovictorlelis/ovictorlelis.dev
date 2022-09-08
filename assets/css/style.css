@@ -379,7 +379,7 @@ footer p {
     bottom: -8rem;
   }
 
-  #portfolio article .content .info {
+  article .content .info {
     width: 100%;
   }
 }

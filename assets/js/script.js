@@ -91,7 +91,9 @@ function getContent() {
       });
 
       const converter = new showdown.Converter({ tables: true });
-      aboutContent.innerHTML = converter.makeHtml(about[0].body);
+      aboutContent.innerHTML = `<div class="md">
+        ${converter.makeHtml(about[0].body)}
+      </div>`;
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       portfolio.forEach((data) => {
