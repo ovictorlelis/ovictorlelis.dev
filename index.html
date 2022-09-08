@@ -47,493 +47,253 @@
     />
     <link rel="manifest" href="./site.webmanifest" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header class="flex items-center content-center gap-3">
-      <img src="./assets/images/profile.png" alt="Foto de Victor Lelis" />
-      <div class="flex column gap-1 text-center">
-        <h1>Victor Lelis</h1>
-        <div class="social flex gap-1 items-center content-center">
-          <a
-            id="github"
-            class="flex items-center content-center"
-            target="_blank"
-            href="https://github.com/ovictorlelis"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="192"
-              height="192"
-              viewBox="0 0 256 256"
+    <div id="loading" class="flex">
+      <img src="./assets/images/loading.svg" alt="Carregando..." height="100" />
+    </div>
+
+    <div id="error" class="none">
+      <h1>Erro ao carregar o conteúdo.</h1>
+    </div>
+
+    <div id="page" class="none">
+      <header class="flex items-center content-center gap-3">
+        <img src="./assets/images/profile.png" alt="Foto de Victor Lelis" />
+        <div class="flex column gap-1 text-center">
+          <h1>Victor Lelis</h1>
+          <div class="social flex gap-1 items-center content-center">
+            <a
+              id="github"
+              class="flex items-center content-center"
+              target="_blank"
+              href="https://github.com/ovictorlelis"
             >
-              <rect width="256" height="256" fill="none"></rect>
-              <path
-                d="M84,240a23.9,23.9,0,0,0,24-24V168"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-              <path
-                d="M172,240a23.9,23.9,0,0,1-24-24V168"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-              <path
-                d="M152,168h16a23.9,23.9,0,0,1,24,24v8a23.9,23.9,0,0,0,24,24"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-              <path
-                d="M104,168H88a23.9,23.9,0,0,0-24,24v8a23.9,23.9,0,0,1-24,24"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-              <path
-                d="M111.8,64A52,52,0,0,0,68,40a52,52,0,0,0-3.5,44.7A49.3,49.3,0,0,0,56,112v8a48,48,0,0,0,48,48h48a48,48,0,0,0,48-48v-8a49.3,49.3,0,0,0-8.5-27.3A52,52,0,0,0,188,40a52,52,0,0,0-43.8,24Z"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-            </svg>
-          </a>
-          <a
-            id="linkedin"
-            class="flex items-center content-center"
-            target="_blank"
-            href="https://www.linkedin.com/in/ovictorlelis/"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="192"
-              height="192"
-              viewBox="0 0 256 256"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="192"
+                height="192"
+                viewBox="0 0 256 256"
+              >
+                <rect width="256" height="256" fill="none"></rect>
+                <path
+                  d="M84,240a23.9,23.9,0,0,0,24-24V168"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+                <path
+                  d="M172,240a23.9,23.9,0,0,1-24-24V168"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+                <path
+                  d="M152,168h16a23.9,23.9,0,0,1,24,24v8a23.9,23.9,0,0,0,24,24"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+                <path
+                  d="M104,168H88a23.9,23.9,0,0,0-24,24v8a23.9,23.9,0,0,1-24,24"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+                <path
+                  d="M111.8,64A52,52,0,0,0,68,40a52,52,0,0,0-3.5,44.7A49.3,49.3,0,0,0,56,112v8a48,48,0,0,0,48,48h48a48,48,0,0,0,48-48v-8a49.3,49.3,0,0,0-8.5-27.3A52,52,0,0,0,188,40a52,52,0,0,0-43.8,24Z"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+              </svg>
+            </a>
+            <a
+              id="linkedin"
+              class="flex items-center content-center"
+              target="_blank"
+              href="https://www.linkedin.com/in/ovictorlelis/"
             >
-              <rect
-                x="36"
-                y="36"
-                width="184"
-                height="184"
-                rx="8"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></rect>
-              <line
-                x1="120"
-                y1="112"
-                x2="120"
-                y2="176"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></line>
-              <line
-                x1="88"
-                y1="112"
-                x2="88"
-                y2="176"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></line>
-              <path
-                d="M120,140a28,28,0,0,1,56,0v36"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-              <circle cx="88" cy="80" r="12"></circle>
-            </svg>
-          </a>
-          <a
-            id="instagram"
-            class="flex items-center content-center"
-            target="_blank"
-            href="https://www.instagram.com/ovictorlelis/"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="192"
-              height="192"
-              viewBox="0 0 256 256"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="192"
+                height="192"
+                viewBox="0 0 256 256"
+              >
+                <rect
+                  x="36"
+                  y="36"
+                  width="184"
+                  height="184"
+                  rx="8"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></rect>
+                <line
+                  x1="120"
+                  y1="112"
+                  x2="120"
+                  y2="176"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></line>
+                <line
+                  x1="88"
+                  y1="112"
+                  x2="88"
+                  y2="176"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></line>
+                <path
+                  d="M120,140a28,28,0,0,1,56,0v36"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+                <circle cx="88" cy="80" r="12"></circle>
+              </svg>
+            </a>
+            <a
+              id="instagram"
+              class="flex items-center content-center"
+              target="_blank"
+              href="https://www.instagram.com/ovictorlelis/"
             >
-              <circle
-                cx="128"
-                cy="128"
-                r="40"
-                fill="none"
-                stroke-miterlimit="10"
-                stroke-width="16"
-              ></circle>
-              <rect
-                x="36"
-                y="36"
-                width="184"
-                height="184"
-                rx="48"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></rect>
-              <circle cx="180" cy="76" r="12"></circle>
-            </svg>
-          </a>
-          <a
-            id="email"
-            class="flex items-center content-center"
-            href="mailto:ovictorlelis@gmail.com"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="192"
-              height="192"
-              viewBox="0 0 256 256"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="192"
+                height="192"
+                viewBox="0 0 256 256"
+              >
+                <circle
+                  cx="128"
+                  cy="128"
+                  r="40"
+                  fill="none"
+                  stroke-miterlimit="10"
+                  stroke-width="16"
+                ></circle>
+                <rect
+                  x="36"
+                  y="36"
+                  width="184"
+                  height="184"
+                  rx="48"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></rect>
+                <circle cx="180" cy="76" r="12"></circle>
+              </svg>
+            </a>
+            <a
+              id="email"
+              class="flex items-center content-center"
+              href="mailto:ovictorlelis@gmail.com"
             >
-              <circle
-                cx="128"
-                cy="128"
-                r="40"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></circle>
-              <path
-                d="M181.1,208A96,96,0,1,1,224,128c0,22.1-8,40-28,40s-28-17.9-28-40V88"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="16"
-              ></path>
-            </svg>
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="192"
+                height="192"
+                viewBox="0 0 256 256"
+              >
+                <circle
+                  cx="128"
+                  cy="128"
+                  r="40"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></circle>
+                <path
+                  d="M181.1,208A96,96,0,1,1,224,128c0,22.1-8,40-28,40s-28-17.9-28-40V88"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <nav>
-        <button id="menu">Menu</button>
-        <ul class="gap-3 items-center content-center">
-          <li><a class="active" href="#portfolio">Portfólio</a></li>
-          <li><a href="#formacao">Formação</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#experiencias">Experiências</a></li>
-        </ul>
-      </nav>
+      <main>
+        <nav>
+          <button id="menu">Menu</button>
+          <ul class="gap-3 items-center content-center">
+            <li><a class="active" href="#sobre">Sobre</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#experiencias">Experiências</a></li>
+          </ul>
+        </nav>
+        <section id="sobre"></section>
 
-      <section id="portfolio">
-        <article>
-          <img
-            src="./assets/images/portfolio/desafio.jpg"
-            alt="Print do projeto"
-          />
+        <section id="portfolio" class="none"></section>
 
-          <div class="content">
-            <h3>21 Dias de Código</h3>
-            <p class="info">
-              Participei de um desafio durante 21 dias proposto pela rocketseat,
-              durante esses 21 dias foi desenvolvido 20 projetos.
-            </p>
-            <p class="codes">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>
-                <a
-                  target="_blank"
-                  href="https://ovictorlelis.github.io/21-dias-de-codigo/"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="192"
-                    height="192"
-                    fill="var(--color-feature)"
-                    viewBox="0 0 256 256"
-                  >
-                    <rect width="256" height="256" fill="none"></rect>
-                    <path
-                      d="M122.3,71.4l19.8-19.8a44.1,44.1,0,0,1,62.3,62.3l-28.3,28.2a43.9,43.9,0,0,1-62.2,0"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M133.7,184.6l-19.8,19.8a44.1,44.1,0,0,1-62.3-62.3l28.3-28.2a43.9,43.9,0,0,1,62.2,0"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                  </svg>
-                </a>
-              </span>
-              <span>
-                <a
-                  target="_blank"
-                  href="https://github.com/ovictorlelis/21-dias-de-codigo"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="192"
-                    height="192"
-                    fill="var(--color-feature)"
-                    viewBox="0 0 256 256"
-                  >
-                    <rect width="256" height="256" fill="none"></rect>
-                    <path
-                      d="M84,240a23.9,23.9,0,0,0,24-24V168"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M172,240a23.9,23.9,0,0,1-24-24V168"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M152,168h16a23.9,23.9,0,0,1,24,24v8a23.9,23.9,0,0,0,24,24"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M104,168H88a23.9,23.9,0,0,0-24,24v8a23.9,23.9,0,0,1-24,24"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M111.8,64A52,52,0,0,0,68,40a52,52,0,0,0-3.5,44.7A49.3,49.3,0,0,0,56,112v8a48,48,0,0,0,48,48h48a48,48,0,0,0,48-48v-8a49.3,49.3,0,0,0-8.5-27.3A52,52,0,0,0,188,40a52,52,0,0,0-43.8,24Z"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                  </svg>
-                </a>
-              </span>
-            </p>
-          </div>
-        </article>
+        <section id="formacao" class="none">
+          <article>
+            <div class="blank"></div>
+            <div class="content">
+              <span>Tecnólogo</span>
+              <h3>Marketing</h3>
+              <p class="info">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Perspiciatis veritatis soluta eligendi doloribus quo ex
+                voluptate.
+              </p>
+              <p class="codes">
+                <span>Faculdade Descomplica</span>
+              </p>
+            </div>
+          </article>
+        </section>
 
-        <article>
-          <img
-            src="./assets/images/portfolio/gerador-de-senha.png"
-            alt="Print do projeto"
-          />
+        <section id="experiencias" class="none">
+          <article>
+            <div class="blank"></div>
 
-          <div class="content">
-            <h3>Gerador de Senha</h3>
-            <p class="info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perspiciatis veritatis soluta eligendi doloribus quo ex voluptate.
-            </p>
-            <p class="codes">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>
-                <a href="#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="192"
-                    height="192"
-                    fill="var(--color-feature)"
-                    viewBox="0 0 256 256"
-                  >
-                    <rect width="256" height="256" fill="none"></rect>
-                    <path
-                      d="M122.3,71.4l19.8-19.8a44.1,44.1,0,0,1,62.3,62.3l-28.3,28.2a43.9,43.9,0,0,1-62.2,0"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M133.7,184.6l-19.8,19.8a44.1,44.1,0,0,1-62.3-62.3l28.3-28.2a43.9,43.9,0,0,1,62.2,0"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                  </svg>
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="192"
-                    height="192"
-                    fill="var(--color-feature)"
-                    viewBox="0 0 256 256"
-                  >
-                    <rect width="256" height="256" fill="none"></rect>
-                    <path
-                      d="M84,240a23.9,23.9,0,0,0,24-24V168"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M172,240a23.9,23.9,0,0,1-24-24V168"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M152,168h16a23.9,23.9,0,0,1,24,24v8a23.9,23.9,0,0,0,24,24"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M104,168H88a23.9,23.9,0,0,0-24,24v8a23.9,23.9,0,0,1-24,24"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                    <path
-                      d="M111.8,64A52,52,0,0,0,68,40a52,52,0,0,0-3.5,44.7A49.3,49.3,0,0,0,56,112v8a48,48,0,0,0,48,48h48a48,48,0,0,0,48-48v-8a49.3,49.3,0,0,0-8.5-27.3A52,52,0,0,0,188,40a52,52,0,0,0-43.8,24Z"
-                      fill="none"
-                      stroke="var(--color-feature)"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="16"
-                    ></path>
-                  </svg>
-                </a>
-              </span>
-            </p>
-          </div>
-        </article>
-      </section>
+            <div class="content">
+              <span>Freelance</span>
+              <h3>Desenvolvedor Front-end</h3>
+              <p class="info">
+                Atuo como Desenvolvedor Front-end freelance realizando projetos
+                para agências.
+              </p>
+              <p class="codes">
+                <span>2019 / Atual</span>
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
 
-      <section id="formacao" class="none">
-        <article>
-          <img
-            src="./assets/images/formacao/descomplica.jpg"
-            alt="Imagem da faculdade descomplica"
-          />
+      <footer>
+        <p>Por Victor Lelis</p>
+      </footer>
+    </div>
 
-          <div class="content">
-            <span>Tecnólogo</span>
-            <h3>Marketing</h3>
-            <p class="info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perspiciatis veritatis soluta eligendi doloribus quo ex voluptate.
-            </p>
-            <p class="codes">
-              <span>Faculdade Descomplica</span>
-            </p>
-          </div>
-        </article>
-
-        <article>
-          <img
-            src="./assets/images/formacao/explorer.jpeg"
-            alt="Imagem do explorer"
-          />
-
-          <div class="content">
-            <span>Formação</span>
-            <h3>Explorer</h3>
-            <p class="info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perspiciatis veritatis soluta eligendi doloribus quo ex voluptate.
-            </p>
-            <p class="codes">
-              <span>Rocketseat</span>
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <section id="habilidades" class="none">
-        <article>
-          <img
-            src="./assets/images/portfolio/gerador-de-senha.png"
-            alt="Print do projeto"
-          />
-
-          <div class="content">
-            <h3>JavaScript</h3>
-            <p class="info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Perspiciatis veritatis soluta eligendi doloribus quo ex voluptate.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <section id="experiencias" class="none">
-        <article>
-          <img
-            src="./assets/images/portfolio/gerador-de-senha.png"
-            alt="Print do projeto"
-          />
-
-          <div class="content">
-            <span>Freelance</span>
-            <h3>Desenvolvedor Front-end</h3>
-            <p class="info">
-              Atuo como Desenvolvedor Front-end freelance realizando projetos
-              para agências.
-            </p>
-            <p class="codes">
-              <span>2019 / Atual</span>
-            </p>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <footer>
-      <p>Por Victor Lelis</p>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
