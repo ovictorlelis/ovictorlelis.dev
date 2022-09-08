@@ -62,6 +62,7 @@ function getContent() {
   let about = [];
   let portfolio = [];
   let courses = [];
+  let othersCourses = [];
   let jobs = [];
 
   fetch(
@@ -80,13 +81,16 @@ function getContent() {
           case "courses":
             courses.push(items);
             break;
+          case "others-courses":
+            othersCourses.push(items);
+            break;
           case "jobs":
             jobs.push(items);
             break;
         }
       });
 
-      const converter = new showdown.Converter();
+      const converter = new showdown.Converter({ tables: true });
       aboutContent.innerHTML = converter.makeHtml(about[0].body);
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
@@ -231,6 +235,12 @@ function getContent() {
             </article>
         `;
       });
+
+      coursesContent.innerHTML += `
+      <div class="md">
+        ${converter.makeHtml(othersCourses[0].body)}
+      </div>
+      `;
 
       jobs.forEach((data) => {
         let type = data.body.split("\n")[0].replace("###", "");
