@@ -291,7 +291,14 @@ footer p {
 }
 
 .md ul {
-  margin-left: 2.5rem;
+  list-style: none;
+}
+
+.md ul li::before {
+  content: "\FF70";
+  color: var(--color-feature);
+  display: inline-block;
+  width: 1.5rem;
 }
 
 .md table {
