@@ -216,7 +216,7 @@ function getContent() {
         let name = data.body.split("\n")[1].replace("####", "");
         let content = data.body.split("\n")[2];
 
-        coursesContent.innerHTML = `
+        coursesContent.innerHTML += `
           <article>
               <div class="content">
                 <span>${type}</span>
@@ -237,7 +237,7 @@ function getContent() {
         let name = data.body.split("\n")[1].replace("####", "");
         let content = data.body.split("\n")[2];
 
-        jobsContent.innerHTML = `
+        jobsContent.innerHTML += `
           <article>
               <div class="content">
                 <span>${type}</span>
