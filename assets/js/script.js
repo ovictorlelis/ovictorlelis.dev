@@ -54,11 +54,15 @@ function getContent() {
   let error = document.querySelector("#error");
   let page = document.querySelector("#page");
 
+  let aboutContent = document.querySelector("#about");
   let portfolioContent = document.querySelector("#portfolio");
-  let sobreContent = document.querySelector("#sobre");
+  let coursesContent = document.querySelector("#courses");
+  let jobsContent = document.querySelector("#jobs");
 
+  let about = [];
   let portfolio = [];
-  let sobre = [];
+  let courses = [];
+  let jobs = [];
 
   fetch(
     "https://api.github.com/repos/ovictorlelis/ovictorlelis.github.io/issues"
@@ -67,14 +71,23 @@ function getContent() {
     .then((data) => {
       data.forEach((items) => {
         switch (items.labels[0].name) {
+          case "about":
+            about.push(items);
+            break;
           case "portfolio":
             portfolio.push(items);
             break;
-          case "sobre":
-            sobre.push(items);
+          case "courses":
+            courses.push(items);
+            break;
+          case "jobs":
+            jobs.push(items);
             break;
         }
       });
+
+      const converter = new showdown.Converter();
+      aboutContent.innerHTML = converter.makeHtml(about[0].body);
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       portfolio.forEach((data) => {
@@ -198,8 +211,47 @@ function getContent() {
           });
       });
 
-      const converter = new showdown.Converter();
-      sobreContent.innerHTML = converter.makeHtml(sobre[0].body);
+      courses.forEach((data) => {
+        let type = data.body.split("\n")[0].replace("###", "");
+        let name = data.body.split("\n")[1].replace("####", "");
+        let content = data.body.split("\n")[2];
+
+        coursesContent.innerHTML = `
+          <article>
+              <div class="content">
+                <span>${type}</span>
+                <h3>${data.title}</h3>
+                <p class="info">
+                  ${content}
+                </p>
+                <p>
+                  <span>${name}</span>
+                </p>
+              </div>
+            </article>
+        `;
+      });
+
+      jobs.forEach((data) => {
+        let type = data.body.split("\n")[0].replace("###", "");
+        let name = data.body.split("\n")[1].replace("####", "");
+        let content = data.body.split("\n")[2];
+
+        jobsContent.innerHTML = `
+          <article>
+              <div class="content">
+                <span>${type}</span>
+                <h3>${data.title}</h3>
+                <p class="info">
+                  ${content}
+                </p>
+                <p>
+                  <span>${name}</span>
+                </p>
+              </div>
+            </article>
+        `;
+      });
 
       loading.classList.remove("flex");
       loading.classList.add("none");

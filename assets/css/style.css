@@ -190,7 +190,7 @@ article:nth-child(2n) {
   justify-content: flex-end;
 }
 
-article img {
+#portfolio article img {
   max-width: 45.5rem;
   height: 35.5rem;
   object-fit: cover;
@@ -199,16 +199,12 @@ article img {
   filter: blur(2px);
 }
 
-article:hover > img {
+#portfolio article:hover > img {
   filter: blur(0);
   transition: all 500ms;
 }
 
-article .blank {
-  height: 22rem;
-}
-
-article .content {
+#portfolio article .content {
   text-align: right;
   position: absolute;
   right: 0;
@@ -219,12 +215,17 @@ article .content > span {
   font-weight: bold;
 }
 
-article:nth-child(2n) .content {
+#portfolio article:nth-child(2n) .content {
   text-align: left;
   left: 0;
 }
 
-article:nth-child(2n) .content .codes {
+:is(#courses, #jobs) article:nth-child(2n) .content {
+  text-align: right;
+  left: 0;
+}
+
+#portfolio article:nth-child(2n) .content .codes {
   flex-direction: row-reverse;
 }
 
@@ -232,14 +233,14 @@ article .content h3 {
   font-size: 2.5rem;
 }
 
-article .content .codes {
+#portfolio article .content .codes {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   gap: 2rem;
 }
 
-article .content .codes svg {
+#portfolio article .content .codes svg {
   max-width: 1.8rem;
   height: auto;
 }
@@ -336,25 +337,25 @@ footer p {
     display: block;
   }
 
-  article {
+  #portfolio article {
     position: relative;
     flex-direction: column;
     margin-bottom: 10rem;
   }
 
-  article img {
+  #portfolio article img {
     margin-bottom: 2rem;
     opacity: 0.3;
     filter: blur(0);
   }
 
-  article .content {
+  #portfolio article .content {
     position: absolute;
     padding: 1.5rem;
     bottom: -8rem;
   }
 
-  article .content .info {
+  #portfolio article .content .info {
     width: 100%;
   }
 }
