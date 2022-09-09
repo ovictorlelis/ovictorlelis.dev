@@ -5,7 +5,7 @@ getContent();
 
 function tabs() {
   let links = document.querySelectorAll("nav ul li a");
-  let sections = document.querySelectorAll("section");
+  let sections = document.querySelectorAll(".section");
 
   links.forEach(function (link) {
     link.addEventListener("click", function (e) {
