@@ -291,8 +291,12 @@ footer p {
   margin-bottom: 1rem;
 }
 
-.md :is(p, ul, pre, table) {
+.md :is(p, ul, pre) {
   margin-bottom: 2rem;
+}
+
+.md table {
+  margin-bottom: 5rem;
 }
 
 .md ul {
