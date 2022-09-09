@@ -283,6 +283,11 @@ footer p {
 }
 
 .md :is(h1, h2, h3, h4, h5, h6) {
+  padding-bottom: 1rem;
+}
+
+.md :is(h1, h2) {
+  border-bottom: 1px solid var(--color-secondary);
   margin-bottom: 1rem;
 }
 
