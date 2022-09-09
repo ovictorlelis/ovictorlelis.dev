@@ -71,22 +71,26 @@ function getContent() {
     .then((response) => response.json())
     .then((data) => {
       data.forEach((items) => {
-        switch (items.labels[0].name) {
-          case "about":
-            about.push(items);
-            break;
-          case "portfolio":
-            portfolio.push(items);
-            break;
-          case "courses":
-            courses.push(items);
-            break;
-          case "others-courses":
-            othersCourses.push(items);
-            break;
-          case "jobs":
-            jobs.push(items);
-            break;
+        if (items.user.login == "ovictorlelis") {
+          if (items.labels[0]) {
+            switch (items.labels[0].name) {
+              case "about":
+                about.push(items);
+                break;
+              case "portfolio":
+                portfolio.push(items);
+                break;
+              case "courses":
+                courses.push(items);
+                break;
+              case "others-courses":
+                othersCourses.push(items);
+                break;
+              case "jobs":
+                jobs.push(items);
+                break;
+            }
+          }
         }
       });
 
@@ -97,23 +101,17 @@ function getContent() {
 
       let regex = /!?\[([^\]]*)\]\(([^\)]+)\)/gm;
       portfolio.forEach((data) => {
-        console.log(data);
         let matches = data.body.match(regex);
-        let content = data.body.replace(regex, "").trim();
+        let language = data.body.match(/###.+/g)[0].replace("###", "");
+        let content = data.body.replace(regex, "").split(/###.+/g)[1].trim();
         let datas = [];
         const singleMatch = /\[([^\[]+)\]\((.*)\)/;
         for (var i = 0; i < matches.length; i++) {
           var text = singleMatch.exec(matches[i]);
           datas[text[1]] = text[2];
         }
-        let url = new URL(datas["github"]);
 
-        fetch("https://api.github.com/repos" + url.pathname + "/languages")
-          .then((response) => response.json())
-          .then((languages) => {
-            let language = Object.keys(languages);
-
-            portfolioContent.innerHTML += `
+        portfolioContent.innerHTML += `
             <article>
               <img src="${datas["cover"]}" alt="Print do projeto" />
               <div class="content">
@@ -123,10 +121,7 @@ function getContent() {
                   </p>
                   <p class="codes">
                     <span>
-                      ${language
-                        .join(" | ")
-                        .replace("Hack |", "")
-                        .replace("Shell |", "")}
+                      ${language}
                     </span>
                     <span class="${datas["link"] ? "" : "none"}">
                       <a
@@ -220,7 +215,6 @@ function getContent() {
                 </div>
               </article>
             `;
-          });
       });
 
       courses.forEach((data) => {
@@ -276,7 +270,6 @@ function getContent() {
       page.classList.remove("none");
     })
     .catch((err) => {
-      console.log(err);
       loading.classList.remove("flex");
       loading.classList.add("none");
 
