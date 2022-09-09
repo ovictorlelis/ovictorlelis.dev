@@ -11,7 +11,7 @@ Utilizando a label `about` através de uma única issue e seu conteúdo é criad
 ### Portfólio
 
 Utilizando a label `portfolio` e criar uma issue para cada projeto.
-O título da issue é o título do projeto a capa, link e github é inserido junto com a descrição do projeto seguindo em formato de link.
+O título da issue é o título do projeto a capa, link, github e tecnologias é inserido junto com a descrição do projeto seguindo em formato de link / títulos.
 
 ##### Exemplo
 
@@ -19,6 +19,8 @@ O título da issue é o título do projeto a capa, link e github é inserido jun
 [cover](URL DA IMAGEM)
 [link](URL DO PROJETO)
 [github](URL DO GITHUB)
+
+### TECNOLOGIAS
 ```
 
 ### Formação
