@@ -317,6 +317,10 @@ footer p {
   margin: 0 1rem;
 }
 
+.md ul li {
+  margin-bottom: 1rem;
+}
+
 .md p + h2,
 .md ul + h2 {
   margin-top: 5rem;
