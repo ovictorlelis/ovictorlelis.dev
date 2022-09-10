@@ -265,6 +265,11 @@ function getContent() {
         `;
       });
 
+      let links = document.querySelectorAll(".md a");
+      links.forEach((link) => {
+        link.setAttribute("target", "_blank");
+      });
+
       loading.classList.remove("flex");
       loading.classList.add("none");
       page.classList.remove("none");

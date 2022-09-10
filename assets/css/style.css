@@ -282,6 +282,10 @@ footer p {
   text-align: center;
 }
 
+.md a {
+  color: var(--color-feature);
+}
+
 .md :is(h1, h2, h3, h4, h5, h6) {
   padding-bottom: 1rem;
 }
