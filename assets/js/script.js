@@ -111,6 +111,9 @@ function getContent() {
           datas[text[1]] = text[2];
         }
 
+        let languages = language.trim(" ", "").split(" | ");
+        language = "<ul><li>" + languages.join("</li><li>") + "</li></ul>";
+
         portfolioContent.innerHTML += `
             <article>
               <img src="${datas["cover"]}" alt="Print do projeto" />
@@ -119,12 +122,10 @@ function getContent() {
                   <p class="info">
                     ${content}
                   </p>
-                  <p class="codes">
-                    <span>
-                      ${language}
-                    </span>
-                    <span class="${datas["link"] ? "" : "none"}">
+                  <div class="codes">
+                    ${language}
                       <a
+                        class="${datas["link"] ? "" : "none"}"
                         target="_blank"
                         href="${datas["link"]}"
                       >
@@ -154,9 +155,8 @@ function getContent() {
                           ></path>
                         </svg>
                       </a>
-                    </span>
-                    <span>
                       <a
+                        class="${datas["github"] ? "" : "none"}"
                         target="_blank"
                         href="${datas["github"]}"
                       >
@@ -210,8 +210,7 @@ function getContent() {
                           ></path>
                         </svg>
                       </a>
-                    </span>
-                  </p>
+                  </div>
                 </div>
               </article>
             `;
@@ -222,6 +221,11 @@ function getContent() {
         let name = data.body.split("\n")[1].replace("####", "");
         let content = data.body.split("\n")[2];
 
+        let names = name.trim(" ", "").split(" | ");
+        name = "<ul><li>" + names.join("</li><li>") + "</li></ul>";
+
+        console.log(name);
+
         coursesContent.innerHTML += `
           <article>
               <div class="content">
@@ -230,9 +234,9 @@ function getContent() {
                 <p class="info">
                   ${content}
                 </p>
-                <p>
-                  <span>${name}</span>
-                </p>
+                <div class="codes">
+                  ${name}
+                </div>
               </div>
             </article>
         `;
@@ -249,6 +253,9 @@ function getContent() {
         let name = data.body.split("\n")[1].replace("####", "");
         let content = data.body.split("\n")[2];
 
+        let names = name.trim(" ", "").split(" | ");
+        name = "<ul><li>" + names.join("</li><li>") + "</li></ul>";
+
         jobsContent.innerHTML += `
           <article>
               <div class="content">
@@ -257,9 +264,9 @@ function getContent() {
                 <p class="info">
                   ${content}
                 </p>
-                <p>
-                  <span>${name}</span>
-                </p>
+                <div class="codes">
+                  ${name}
+                </div>
               </div>
             </article>
         `;

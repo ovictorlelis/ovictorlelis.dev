@@ -35,7 +35,7 @@ img {
 }
 
 .none {
-  display: none;
+  display: none !important;
 }
 
 .flex {
@@ -251,9 +251,14 @@ article .content h3 {
 
 #portfolio article .content .codes {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end;
   gap: 2rem;
+}
+
+#portfolio article .content .codes a {
+  display: flex;
+  align-items: center;
 }
 
 #portfolio article .content .codes svg {
@@ -302,7 +307,7 @@ footer p {
 .md table {
   margin-bottom: 5rem;
 }
-
+.codes ul,
 .md ul {
   display: flex;
   align-items: center;
@@ -310,6 +315,7 @@ footer p {
   list-style: none;
 }
 
+.codes ul li:not(:last-child)::after,
 .md ul li:not(:last-child)::after {
   content: "\FF70";
   color: var(--color-feature);
