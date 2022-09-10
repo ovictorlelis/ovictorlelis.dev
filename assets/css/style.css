@@ -236,6 +236,11 @@ article .content > span {
   left: 0;
 }
 
+:is(#courses, #jobs) article:nth-child(2n) .content .codes {
+  display: flex;
+  justify-content: flex-end;
+}
+
 :is(#courses, #jobs) article:nth-child(2n) .content {
   text-align: right;
   left: 0;
