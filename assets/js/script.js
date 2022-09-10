@@ -224,8 +224,6 @@ function getContent() {
         let names = name.trim(" ", "").split(" | ");
         name = "<ul><li>" + names.join("</li><li>") + "</li></ul>";
 
-        console.log(name);
-
         coursesContent.innerHTML += `
           <article>
               <div class="content">
