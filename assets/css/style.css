@@ -304,14 +304,16 @@ footer p {
 }
 
 .md ul {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
 
-.md ul li::before {
+.md ul li + li::before {
   content: "\FF70";
   color: var(--color-feature);
   display: inline-block;
-  width: 1.5rem;
+  margin: 0 1rem;
 }
 
 .md table {
