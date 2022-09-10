@@ -316,6 +316,11 @@ footer p {
 .md table {
   margin-bottom: 5rem;
 }
+
+.md td {
+  padding: 1rem 0;
+}
+
 .codes ul,
 .md ul {
   display: flex;
