@@ -313,7 +313,7 @@ footer p {
   margin-bottom: 2rem;
 }
 
-.info .md :is(p:last-child) {
+.info .md :is(p:last-child, ul:last-child) {
   margin-bottom: 0px;
 }
 
