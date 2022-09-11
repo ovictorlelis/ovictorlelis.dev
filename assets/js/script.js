@@ -217,9 +217,10 @@ function getContent() {
       });
 
       courses.forEach((data) => {
-        let type = data.body.split("\n")[0].replace("###", "");
-        let name = data.body.split("\n")[1].replace("####", "");
-        let content = data.body.split("\n")[2];
+        let regex = /#{1,6}.+/g;
+        let type = data.body.match(regex)[0].replace("###", "");
+        let name = data.body.match(regex)[1].replace("####", "");
+        let content = data.body.split(regex)[2];
 
         let names = name.trim(" ", "").split(" | ");
         name = "<ul><li>" + names.join("</li><li>") + "</li></ul>";
@@ -229,9 +230,9 @@ function getContent() {
               <div class="content">
                 <span>${type}</span>
                 <h3>${data.title}</h3>
-                <p class="info">
-                  ${content}
-                </p>
+                <div class="info">
+                  <div class="md">${converter.makeHtml(content)}</div>
+                </div>
                 <div class="codes">
                   ${name}
                 </div>
@@ -247,9 +248,10 @@ function getContent() {
       `;
 
       jobs.forEach((data) => {
-        let type = data.body.split("\n")[0].replace("###", "");
-        let name = data.body.split("\n")[1].replace("####", "");
-        let content = data.body.split("\n")[2];
+        let regex = /#{1,6}.+/g;
+        let type = data.body.match(regex)[0].replace("###", "");
+        let name = data.body.match(regex)[1].replace("####", "");
+        let content = data.body.split(regex)[2];
 
         let names = name.trim(" ", "").split(" | ");
         name = "<ul><li>" + names.join("</li><li>") + "</li></ul>";
@@ -259,9 +261,9 @@ function getContent() {
               <div class="content">
                 <span>${type}</span>
                 <h3>${data.title}</h3>
-                <p class="info">
-                  ${content}
-                </p>
+                <div class="info">
+                  <div class="md">${converter.makeHtml(content)}</div>
+                </div>
                 <div class="codes">
                   ${name}
                 </div>
