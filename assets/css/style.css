@@ -335,7 +335,7 @@ footer p {
 
 .codes ul li:not(:last-child)::after,
 .md ul li:not(:last-child)::after {
-  content: "\FF70";
+  content: "\2212";
   color: var(--color-feature);
   display: inline-block;
   margin: 0 1rem;
