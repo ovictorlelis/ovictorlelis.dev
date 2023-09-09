@@ -3,7 +3,7 @@
 
   --color-primary: #1e272e;
   --color-secondary: #485460;
-  --color-feature: #ffde59;
+  --color-feature: #4F5B93;
   --fc-primary: #f3f3f3;
 
   --ff-primary: "Inter", sans-serif;
@@ -122,14 +122,14 @@ header img {
 }
 
 :is(#github, #linkedin, #instagram, #email) svg {
-  fill: #ffde59;
+  fill: #4F5B93;
 }
 
 :is(#github, #linkedin, #email) svg path,
 :is(#linkedin, #instagram) svg rect,
 :is(#instagram, #email) svg circle,
 #linkedin svg line {
-  stroke: #ffde59;
+  stroke: #4F5B93;
 }
 
 #github:hover svg {
@@ -197,7 +197,6 @@ nav ul li a.active,
 nav ul li a:hover {
   transition: all 500ms;
   background: var(--color-feature);
-  color: var(--color-primary);
 }
 
 article {
