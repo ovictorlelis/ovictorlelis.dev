@@ -1,10 +1,11 @@
 :root {
   font-size: 62.5%;
 
-  --color-primary: #0078D3;
-  --color-secondary: #485460;
-  --color-feature: #4F5B93;
-  --fc-primary: #f3f3f3;
+  --color-primary: #E6E7EB;
+  --color-secondary: #222222;
+  --color-feature: #444444;
+  --fc-primary: #444444;
+  --fc-secondary: #E6E7EB;
 
   --ff-primary: "Inter", sans-serif;
 }
@@ -122,27 +123,28 @@ header img {
 }
 
 :is(#github, #linkedin, #instagram, #email) svg {
-  fill: #4F5B93;
+  fill: var(--color-secondary);
 }
 
 :is(#github, #linkedin, #email) svg path,
 :is(#linkedin, #instagram) svg rect,
 :is(#instagram, #email) svg circle,
 #linkedin svg line {
-  stroke: #4F5B93;
+  stroke: var(--color-secondary);
 }
 
 #github:hover svg {
-  fill: #f0f6fc;
+  fill: #000000;
 }
 
 #github:hover svg path {
-  stroke: #f0f6fc;
+  stroke: #000000;
 }
 
 #linkedin:hover svg {
   fill: #0073b1;
 }
+
 #linkedin:hover svg path,
 #linkedin:hover svg rect,
 #linkedin:hover svg line {
@@ -191,6 +193,7 @@ nav ul {
 nav ul li a {
   padding: 1.3rem 2.3rem;
   border-radius: 10px;
+  color: var(--fc-secondary);
 }
 
 nav ul li a.active,
@@ -219,7 +222,7 @@ article:nth-child(2n) {
   filter: blur(2px);
 }
 
-#portfolio article:hover > img {
+#portfolio article:hover>img {
   filter: blur(0);
   transition: all 500ms;
 }
@@ -230,7 +233,7 @@ article:nth-child(2n) {
   right: 0;
 }
 
-article .content > span {
+article .content>span {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -277,6 +280,7 @@ article .content h3 {
 
 article .content .info {
   background-color: var(--color-secondary);
+  color: var(--fc-secondary);
   padding: 2rem;
   border-radius: 10px;
   width: 45.5rem;
@@ -345,8 +349,8 @@ footer p {
   margin-bottom: 1rem;
 }
 
-.md p + h2,
-.md ul + h2 {
+.md p+h2,
+.md ul+h2 {
   margin-top: 5rem;
 }
 
@@ -407,7 +411,7 @@ footer p {
     gap: 1rem;
   }
 
-  nav ul > li {
+  nav ul>li {
     width: 100%;
     flex-basis: 100%;
   }
